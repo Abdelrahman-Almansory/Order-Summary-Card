@@ -1,0 +1,223 @@
+:root {
+    /* Colors */
+    --primary--blue: hsl(245, 75%, 52%);
+    --primary--pale--blue: hsl(225, 100%, 94%);
+
+    --neutral--pale--blue: hsl(225, 100%, 98%);
+    --neutral--desaturated--blue:hsl(224, 23%, 55%);
+    --neutral--dark--blue: hsl(223, 47%, 23%);
+
+    /* Font weight */
+    --fw--XL: 900;
+    --fw--M: 700;
+    --fw--S: 500;
+
+    /* Font family */
+    --ff--serif: "Red Hat Display", serif;
+}
+
+/* CSS RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: var(--primary--pale--blue) url("images/pattern-background-desktop.svg") no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff--serif);
+}
+
+.summary-card {
+    background-color: var(--neutral--pale--blue);
+    text-align: center;
+    min-width: 260px;
+    max-width: 400px;
+    height: 600px;
+    border-radius: 1rem;
+}
+
+img {
+    width: 100%;
+    border-radius: 1em 1em 0 0;
+}
+
+.order-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 50px;
+    gap: 20px;
+    
+}
+
+h1 {
+    font-weight: var(--fw--XL);
+    color: var(--neutral--dark--blue);
+    font-size: 1.6rem;
+}
+
+.order-summary p {
+    color: var(--neutral--desaturated--blue);
+    font-size: 0.9em;
+}
+
+.plan {
+    background-color: hsla(225, 100%, 94%, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.2em 0.9em;
+    border-radius: 0.5em;
+}
+
+.plan img {
+    width: 80%;
+}
+
+.plan-info {
+    margin-right: 4.6rem;
+}
+
+.plan-info .plan-name {
+    font-weight: var(--fw--M);
+    color: var(--neutral--dark--blue);
+}
+
+.change-link {
+    color: var(--primary--blue);
+    font-weight: var(--fw--M);
+    font-size: 0.9rem;
+}
+
+.change-link:active {
+    color: hsl(262, 68%, 52%);
+    text-decoration: none;
+}
+
+.proceed {
+    background-color: var(--primary--blue);
+    color: var(--neutral--pale--blue);
+    font-weight: var(--fw--M);
+    border: none;
+    border-radius: 0.6rem;
+    width: 100%;
+    padding: 1.3em 1em;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px hsla(245, 75%, 52%, 0.4);
+    margin-bottom: 10px;
+    font-size: 0.8em;
+    transition: 0.15s ease;
+}
+
+.proceed:active {
+    background-color: hsla(245, 75%, 52%, 0.81);
+}
+
+.cancel {
+    text-decoration: none;
+    color: var(--neutral--desaturated--blue);
+    font-weight: var(--fw--XL);
+    font-size: 0.8em;
+}
+
+.cancel:active {
+    color: var(--neutral--dark--blue);
+}
+
+@media(max-width:500px) {
+
+    body {
+        background-image: url("images/pattern-background-mobile.svg");
+    }
+
+    .summary-card {
+        max-width: 350px;
+    }
+
+    .plan-info {
+        margin-right: 2rem;
+    }
+}
+
+
